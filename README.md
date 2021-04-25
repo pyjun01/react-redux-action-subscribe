@@ -1,4 +1,5 @@
 # react-redux-action-callback
+
 Add an action listener with react hooks
 
 ## Install
@@ -9,15 +10,22 @@ npm install --save react-redux-action-callback
 
 ## Usage
 
+### Redux Store
+
+```tsx
+
+```
+
+### Component
+
 ```tsx
 import React, { Component } from 'react'
-
 import useActionCallback from 'react-redux-action-callback'
 
 function Example {
 
   useActionCallback({
-    actionType: (payload) => {
+    addItem: (payload) => {
 
     }
   });
