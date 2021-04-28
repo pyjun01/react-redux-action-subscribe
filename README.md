@@ -1,11 +1,11 @@
-# react-redux-action-callback
+# react-redux-action-subscribe
 
 Add an action listener with react hooks
 
 ## Install
 
 ```bash
-npm install --save react-redux-action-callback
+npm install --save react-redux-action-subscribe
 ```
 
 ## Usage
@@ -13,18 +13,23 @@ npm install --save react-redux-action-callback
 ### Redux Store
 
 ```tsx
+import { createStore, applyMiddleware } from 'redux';
+import actionMiddleware from 'react-redux-action-subscribe';
 
+import reducers from './reducers';
+
+const store = createStore(reducers, applyMiddleware(actionMiddleware));
 ```
 
 ### Component
 
 ```tsx
 import React, { Component } from 'react'
-import useActionCallback from 'react-redux-action-callback'
+import { useActionSubscribe } from 'react-redux-action-subscribe'
 
 function Example {
 
-  useActionCallback({
+  useActionSubscribe({
     addItem: (payload) => {
 
     }

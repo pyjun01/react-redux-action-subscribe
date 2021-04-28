@@ -21,7 +21,7 @@ interface Handler {
   [key: string]: (payload: unknown) => void;
 }
 
-export const useActionCallback = (sub: Handler) => {
+export const useActionSubscribe = (sub: Handler) => {
   useEffect(() => {
     const unsubscribe = Store.subscribe(sub);
 
