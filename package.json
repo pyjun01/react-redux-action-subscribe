@@ -1,10 +1,10 @@
 {
-  "name": "react-redux-action-callback",
-  "version": "1.0.0",
+  "name": "react-redux-action-subscribe",
+  "version": "0.0.1",
   "description": "Add an action listener with react hooks",
   "author": "pyjun01",
   "license": "MIT",
-  "repository": "pyjun01/react-redux-action-callback",
+  "repository": "pyjun01/react-redux-action-subscribe",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
@@ -66,7 +66,7 @@
   ],
   "keywords": ["react", "redux", "hooks"],
   "bugs": {
-    "url": "https://github.com/pyjun01/react-redux-action-callback/issues"
+    "url": "https://github.com/pyjun01/react-redux-action-subscribe/issues"
   },
-  "homepage": "https://github.com/pyjun01/react-redux-action-callback#readme"
+  "homepage": "https://github.com/pyjun01/react-redux-action-subscribe#readme"
 }
