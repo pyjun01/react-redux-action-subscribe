@@ -32,13 +32,15 @@ export const useActionSubscribe = (sub: Handler) => {
 const actionCallback: Middleware = () => (next) => (action) => {
   const { type, payload } = action;
 
+  const res = next(action);
+
   if (type) {
     for (let i = 0; i < Store.listeners.length; i++) {
       Store.listeners[i] && Store.listeners[i][type] && Store.listeners[i][type](payload);
     }
   }
 
-  next(action);
+  return res;
 }
 
 export default actionCallback;

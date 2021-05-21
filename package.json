@@ -29,15 +29,11 @@
     "redux": "^4.0.4"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^25.1.4",
     "@types/node": "^12.12.38",
-    "@types/redux": "^3.6.0",
     "@types/react": "^16.9.27",
     "@types/react-dom": "^16.9.7",
     "@types/react-redux": "^7.1.16",
+    "@types/redux": "^3.6.0",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "babel-eslint": "^10.0.3",
@@ -64,7 +60,11 @@
   "files": [
     "dist"
   ],
-  "keywords": ["react", "redux", "hooks"],
+  "keywords": [
+    "react",
+    "redux",
+    "hooks"
+  ],
   "bugs": {
     "url": "https://github.com/pyjun01/react-redux-action-subscribe/issues"
   },
