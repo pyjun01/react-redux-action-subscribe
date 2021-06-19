@@ -15,32 +15,47 @@ const Store: {
       this.listeners.splice(index, 1);
     };
   },
-}
+};
+
+type Callback = (action: unknown) => void;
 
 interface Handler {
-  [key: string]: (payload: unknown) => void;
+  [key: string]: Callback;
 }
 
-export const useActionSubscribe = (sub: Handler) => {
+export const useActionSubscribe = (sub: Handler | string, callback?: Callback) => {
   useEffect(() => {
+    if (typeof sub === 'string') {
+      if (typeof callback === 'function') {
+        const unsubscribe = Store.subscribe({
+          [sub]: callback,
+        });
+
+        return unsubscribe;
+      }
+
+      // throw Error('callback must be function');
+      return;
+    }
+
     const unsubscribe = Store.subscribe(sub);
 
     return unsubscribe;
   }, []);
-}
+};
 
 const actionCallback: Middleware = () => (next) => (action) => {
-  const { type, payload } = action;
+  const { type } = action;
 
   const res = next(action);
 
   if (type) {
     for (let i = 0; i < Store.listeners.length; i++) {
-      Store.listeners[i] && Store.listeners[i][type] && Store.listeners[i][type](payload);
+      Store.listeners[i] && Store.listeners[i][type] && Store.listeners[i][type](action);
     }
   }
 
   return res;
-}
+};
 
 export default actionCallback;
