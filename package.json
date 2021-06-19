@@ -1,6 +1,6 @@
 {
   "name": "react-redux-action-subscribe",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Add an action listener with react hooks",
   "author": "pyjun01",
   "license": "MIT",
