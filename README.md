@@ -18,7 +18,7 @@ import actionMiddleware from 'react-redux-action-subscribe';
 
 import reducers from './reducers';
 
-const store = createStore(reducers, applyMiddleware(actionMiddleware));
+const store = createStore(reducers, initialState, applyMiddleware(actionMiddleware));
 ```
 
 ### Component
@@ -29,10 +29,16 @@ import { useActionSubscribe } from 'react-redux-action-subscribe'
 
 function Example {
 
+  // case 1
   useActionSubscribe({
-    addItem: (payload) => {
+    addItem: (action) => {
 
     }
+  });
+
+  // case 2
+  useActionSubscribe('removeItem', (action) => {
+
   });
 
   return <MyComponent />
